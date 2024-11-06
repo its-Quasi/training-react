@@ -39,9 +39,12 @@ const CustomForm = () => {
           name="name"
           control={control}
           render={
-            () =>
-              <input id="name" type="string" className={`form-control ${errors.name ? "is-invalid" : ""}`} />
-
+            () => (
+              <input id="name"
+                type="string"
+                className={`form-control ${errors.name ? "is-invalid" : ""}`}
+              />
+            )
           }
         />
       </div>
