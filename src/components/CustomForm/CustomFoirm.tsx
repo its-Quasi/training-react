@@ -1,7 +1,7 @@
-import { fields } from "@hookform/resolvers/ajv/src/__tests__/__fixtures__/data.js"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller, SubmitHandler, useForm } from "react-hook-form"
-import { z, } from "zod"
+import { SubmitHandler, useForm } from "react-hook-form"
+import { z } from "zod"
+import CustomInput from "../CustomInput/CustomInput"
 
 //ERROR MESSAGES | REPLACE FOR TRANSLATIONS
 const nameMessageError = "name is required"
@@ -33,23 +33,9 @@ const CustomForm = () => {
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group">
-        <label htmlFor="name">Name</label>
-        <Controller
-          name="name"
-          control={control}
-          render={
-            () => (
-              <input id="name"
-                type="string"
-                className={`form-control ${errors.name ? "is-invalid" : ""}`}
-              />
-            )
-          }
-        />
-      </div>
+      <CustomInput control={control} label="name" errors={errors} name="name"/>
     </form>
   )
 }
 
-export default schema
+export default CustomForm
