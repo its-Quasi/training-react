@@ -1,11 +1,9 @@
-import { memo } from "react"
-
+import React from 'react';
 interface Props {
-  label: string
-  parentFn: () => void
+  parentFn: () => void;
 }
 
-export const PrimaryButton = memo(({ label, parentFn }: Props) => {
+export const PrimaryButton = React.memo(({ parentFn }: Props) => {
   console.log("primary children");
-  return <button onClick={parentFn}>{label}</button>;
-}, (prev, next) => prev.parentFn === next.parentFn);
+  return <button onClick={parentFn}>Increment</button>;
+});

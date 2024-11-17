@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { z } from "zod"
-import CustomInput from "../CustomInput/CustomInput"
+import CustomInput from "./CustomInput/CustomInput"
 
 //ERROR MESSAGES | REPLACE FOR TRANSLATIONS
 const nameMessageError = "name is required"
@@ -33,7 +33,7 @@ const CustomForm = () => {
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <CustomInput control={control} label="name" errors={errors} name="name"/>
+      <CustomInput control={control} label="name" errors={errors} name="name" />
     </form>
   )
 }
